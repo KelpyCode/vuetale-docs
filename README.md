@@ -162,8 +162,5 @@ Full guides, API reference, and CLI docs at the documentation site.
 - [Companion CLI](https://kelpycode.github.io/vuetale-docs/docs/cli/companion-cli)
 - [Troubleshooting](https://kelpycode.github.io/vuetale-docs/docs/troubleshooting)
 
----
 
-## License
 
-See [LICENSE](LICENSE).
