@@ -14,6 +14,11 @@ ModuleRegistry.registerModule("myMod", Plugin::class.java)
 
 The module name should match your `vuetale-plugin.json` name.
 
+:::info
+`Plugin::class.java` is used by Vuetale to link the module to your plugin's classloader for resource loading. This allows Vuetale to find your compiled UI assets when opening pages. 
+It's safe and recommended to keep this value the same.
+:::
+
 ## Open a Page for a Player
 
 ```kt
@@ -31,7 +36,7 @@ Arguments:
 - `playerRef`: target player
 - `ref` / `store`: entity context
 - `"myMod"`: module alias containing compiled UI assets
-- `"TestPage"`: page component entry name
+- `"TestPage"`: page component entry name (from `/pages/TestPage.vue`)
 
 ## Send Data to Vue with setData
 
@@ -71,15 +76,39 @@ const test2 = useData<{ a: string; b: number }>('test2', { a: '', b: 0 })
 
 Vuetale maps native UI events to Vue handlers.
 
-## Payload Guidance
+## Using Common Components
+Vuetale provides Hytale's `Common.ui` as Vue components that you can import from the `@core` library, once you've extracted the definitions with `vt extract`.
 
-Use serializable values for reliable transfer:
+```ts
+import { Common } from 'vt:@core/components/Common'
+```
 
-- primitives
-- arrays
-- objects
-- Kotlin/Java data classes
+Then you can use these components in your pages with full intellisense support and type safety.
+Just write `<Common.` and then use your editor's autocomplete to explore the available components and their props/events.
 
-Advanced callback-style patterns may work depending on bridge/runtime behavior, but treat function payloads as advanced and validate them in your target version.
+```vue
+<Common.TextButton @activating="clickTest" text="CLICK ME"></Common.TextButton>
+```
 
-Next: [Kotlin API](/docs/api/kotlin) and [Vue API](/docs/api/vue).
+## Using Core Components
+Vuetale exposes some core components that are useful wrappers and helpers for building your own UI. These are also imported from the `@core` library.
+
+```ts
+import { Core } from 'vt:@core/components/core';
+```
+
+### Elements
+
+#### `Core.TextField`
+A wrapper around `Common.TextField` that allows you to pass a `modelValue` and `onUpdate:modelValue` for easier two-way binding.
+Essentially you can use `v-model` with `Core.TextField`, which is not possible with `Common.TextField` due to its native event structure.
+```vue
+<script lang="ts" setup>
+    const textFieldInput = ref("Default text");
+</script>
+<template>
+    <Core.TextField v-model="textFieldInput"></Core.TextField>
+</template>
+```
+
+

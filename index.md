@@ -4,6 +4,7 @@ layout: home
 hero:
   name: 'Vuetale'
   text: 'Vue UI for Hytale Mods'
+  image: /logo.png
   tagline: Build Hytale interfaces with Vue 3, TypeScript, and Kotlin/Java.
   actions:
     - theme: brand

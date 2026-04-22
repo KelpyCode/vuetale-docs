@@ -31,7 +31,6 @@ val ui = PlayerUiManager.openPage(
 ui.setData("test", "Hello this is a test!")
 ```
 
-When `/openmyui` (or equivalent) runs, Vuetale mounts `TestPage` for that player.
 
 ## 3. Vue Page Consumes Data
 

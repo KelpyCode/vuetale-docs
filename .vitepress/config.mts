@@ -4,6 +4,7 @@ export default defineConfig({
   title: 'Vuetale',
   description: 'Build Hytale UIs with Vue 3 and Kotlin/Java',
   themeConfig: {
+    logo: '/logo.png',
     nav: [
       { text: 'Guide', link: '/docs/getting-started' },
       { text: 'API', link: '/docs/api/kotlin' },

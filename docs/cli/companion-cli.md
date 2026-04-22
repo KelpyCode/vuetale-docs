@@ -20,7 +20,7 @@ Initialize project support files and Vuetale metadata wiring.
 
 ```bash
 vuetale install
-# or version-dependent wrapper
+# or
 pnpm vt init
 ```
 
@@ -50,12 +50,13 @@ pnpm vt:extract
 vuetale extract
 ```
 
-## dev true
+## dev
 
-Enable dev/hot-reload support properties.
+Enable/Disable dev/hot-reload support properties.
 
 ```bash
 pnpm vt dev true
+pnpm vt dev false
 ```
 
 ## remove
@@ -71,7 +72,7 @@ vuetale remove @alias
 Run from `src/ui`:
 
 ```bash
-pnpm install
+pnpm install    
 pnpm vt init
 pnpm vt config hytale-jar <jar-path>
 pnpm vt config resources <resources-path>
