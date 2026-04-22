@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Vuetale',
   description: 'Build Hytale UIs with Vue 3 and Kotlin/Java',
+  base: '/vuetale-docs/',
   themeConfig: {
     logo: '/logo.png',
     nav: [
