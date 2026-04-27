@@ -2,14 +2,19 @@
 outline: deep
 ---
 
+:::warning
+Please try updating to the latest version of Vuetale before troubleshooting, as many issues are often resolved in newer releases.
+:::
+
 # Troubleshooting
 
-## Command Not Found (`pnpm vt` / `vuetale`)
+
+## Command Not Found (`pnpm vt` / `npx vuetale`)
 
 Symptoms:
 
 - `pnpm vt ...` fails
-- `vuetale` command not found
+- `npx vuetale` command not found
 
 Fix:
 
@@ -36,9 +41,9 @@ Symptoms:
 
 Fix:
 
-1. Recheck `config hytale-jar` absolute path.
-2. Ensure JAR is readable and valid.
-3. Rerun extraction command.
+1. Recheck `npx vuetale config server-mods` and `resources` path.
+2. Ensure `Vuetale.jar` is in the specified mods folder.
+3. Rerun extraction after confirming paths.
 
 ## UI Not Loading In-Game
 
@@ -59,8 +64,9 @@ Symptoms:
 - Changes compile but runtime still shows stale UI.
 
 Fix:
-
-1. Ensure `pnpm vt dev true` has been run.
+1. Ensure `pnpm vt config server-mods` is set to the correct mods folder.
+2. Ensure `pnpm vt config resources` has the correct path to `src/main/resources`.
+1. Ensure `pnpm vt dev true` has been run. (Rerun when changing config values!)
 2. Keep `pnpm watch` running in `src/ui`.
 3. Verify server-side dev properties are present and pointing to the intended resources path.
 

@@ -1,8 +1,12 @@
 # Vuetale
 
+> 🧙 Sponsord by [Hytale Modding Grant Program](https://opencollective.com/hytalemodding)
+
 **Build Hytale mod UIs with Vue 3, TypeScript, and Kotlin/Java.**
 
 Vuetale is a Hytale mod library that brings modern frontend development to Hytale mod interfaces. Write reactive, component-based UIs in Vue SFCs, compile them through Vite, and drive them from your Kotlin/Java mod code — all with full type safety.
+
+[Vuetale Discord](https://discord.gg/affkepndn7)
 
 ---
 
@@ -29,10 +33,14 @@ Vue SFC  →  Vite build  →  resources/vuetale/<module>/  →  loaded by JVM m
 
 ## Quick Start
 
+> For an in-depth guide, see the [Getting Started Guide](https://kelpycode.github.io/vuetale-docs/docs/getting-started).
+
 ### 1. Get Vuetale
 
-> CurseForge listing is currently under review. Download the latest build at:
-> **https://modifold.com/mod/vuetale**
+Download from either
+* [GitHub Releases](https://github.com/KelpyCode/Vuetale/releases)
+* [Modtale](https://modtale.net/mod/vuetale)
+* [Curseforge](https://www.curseforge.com/hytale/mods/vuetale)
 
 ### 2. Clone the starter project
 
@@ -58,7 +66,7 @@ Copy `Vuetale-*.jar` to `lib/Vuetale.jar`.
 
 ```bash
 pnpm install
-pnpm vt config hytale-jar <path-to-Vuetale.jar>
+pnpm vt config server-mods <absolute-path-to-run/mods>
 pnpm vt config resources <path-to-src/main/resources>
 pnpm vt extract
 pnpm vt dev true

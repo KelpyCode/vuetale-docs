@@ -30,6 +30,14 @@ Set path to Hytale/Vuetale JAR source used for extraction.
 pnpm vt config hytale-jar <absolute-path-to-jar>
 ```
 
+## config server-mods
+
+Set path to server mods folder for extraction and hot reload.
+
+```bash
+pnpm vt config server-mods <absolute-path-to-run/mods>
+```
+
 ## config resources
 
 Set project resources output location.

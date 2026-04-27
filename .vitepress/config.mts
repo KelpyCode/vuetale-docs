@@ -29,6 +29,7 @@ export default defineConfig({
           { text: 'Kotlin API', link: '/docs/api/kotlin' },
           { text: 'Vue API', link: '/docs/api/vue' },
           { text: 'Companion CLI', link: '/docs/cli/companion-cli' },
+          { text: 'Limitations', link: '/docs/limitations' },
           { text: 'Troubleshooting', link: '/docs/troubleshooting' }
         ]
       }

@@ -4,12 +4,12 @@ outline: deep
 
 # Getting Started
 
-## Download Status
+## Download
+You can always get the very latest version of Vuetale from [GitHub](https://github.com/KelpyCode/Vuetale/releases).
+Currently working on deployment to all the major mod hosting platforms.
 
-CurseForge distribution is still under review.
-
-Download latest JAR from modifold:
-https://modifold.com/mod/vuetale    
+* [CurseForge](https://www.curseforge.com/hytale/mods/vuetale)
+* [Modifold](https://modifold.com/mod/vuetale)
 
 ## Prerequisites
 
@@ -20,6 +20,8 @@ https://modifold.com/mod/vuetale
 - VS Code (Vue/Vite side)
 
 ## 1. Clone the Starter
+
+This starter is using Gradle with Kotlin, but the structure should be adaptable to Maven or other JVM build tools.
 
 ```bash
 git clone git@github.com:KelpyCode/vuetale-starter.git --recurse-submodules my-mod-project
@@ -81,7 +83,8 @@ is the same as
 Run the setup commands from `src/ui`:
 
 ```bash
-pnpm vt config hytale-jar <absolute-path-to-Vuetale.jar>
+pnpm vt config hytale-jar <absolute-path-to-Vuetale.jar> # This is not required yet, but will be in the future for JVM to d.ts extraction
+pnpm vt config server-mods <absolute-path-to-run/mods> # This is required for d.ts extraction and hot reload
 pnpm vt config resources <absolute-path-to-src/main/resources>
 pnpm vt extract # Extracts module/type definitions from the JARs in the mods folder
 pnpm vt dev true # Enables dev properties for hot reload support
