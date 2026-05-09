@@ -30,11 +30,43 @@ rm -rf .git
 rm -rf src/ui/.git
 ```
 
-## 2. Add Vuetale JAR
+## 2. Include Vuetale in your project
 
-Copy `Vuetale-*.jar` to:
+::: details Option 1: Download manually and include in project
 
-- `lib/Vuetale.jar` (rename as needed)
+Download and copy `Vuetale-*.jar` to `lib/Vuetale.jar` (rename as needed) and add the following to your `build.gradle.kts` dependencies:
+
+```kotlin
+dependencies {
+    compileOnly(files("lib/Vuetale.jar")) // [!code ++]
+}
+```
+
+:::
+::: details Option 2: Use cursemaven to include automatically
+
+Add cursemaven repository to your `build.gradle.kts`:
+
+```kotlin
+repositories {
+    maven("https://cursemaven.com") // [!code ++]
+}
+```
+
+[Go to the Curseforge page and click on the latest file](https://www.curseforge.com/hytale/mods/vuetale/files/all?page=1&pageSize=20&showAlphaFiles=hide).
+In your address bar, you'll see something like `https://www.curseforge.com/hytale/mods/vuetale/files/8044274`.
+The number at the end is the file ID. You will fill in the XYZ in the dependency snippet below with that file ID to pull the JAR directly from CurseForge.
+
+
+Add the following to your `build.gradle.kts` dependencies:
+
+```kotlin
+dependencies {
+    compileOnly("curse.maven:vuetale-1521120:XYZ") // Replace XYZ with the file id // [!code ++]
+}
+```
+
+:::
 
 ## 3. Open Both IDE Workspaces
 

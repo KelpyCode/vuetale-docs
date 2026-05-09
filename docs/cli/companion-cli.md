@@ -12,6 +12,14 @@ Some guides use `pnpm vt init`, while current command sets often use `vuetale in
 
 Use the command names available in your installed CLI version.
 
+## Updating Vuetale CLI
+
+To update the Vuetale CLI to the latest version, run inside `src/ui`:
+
+```bash
+pnpm install vuetale --latest
+```
+
 ## Core Commands
 
 ## install / init
