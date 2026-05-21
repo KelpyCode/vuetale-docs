@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 
-const base = process.env.VITEPRESS_BASE ?? (process.env.CF_PAGES ? '/' : '/vuetale-docs/')
+const base = process.env.VITEPRESS_BASE ?? '/'
 
 export default defineConfig({
   title: 'Vuetale',
