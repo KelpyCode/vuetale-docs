@@ -1,9 +1,11 @@
 import { defineConfig } from 'vitepress'
 
+const base = process.env.VITEPRESS_BASE ?? (process.env.CF_PAGES ? '/' : '/vuetale-docs/')
+
 export default defineConfig({
   title: 'Vuetale',
   description: 'Build Hytale UIs with Vue 3 and Kotlin/Java',
-  base: '/vuetale-docs/',
+  base,
   themeConfig: {
     logo: '/logo.png',
     nav: [
